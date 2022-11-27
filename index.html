@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Casa Das Utilidades</title> 
+    <link rel="shortcut icon" href="Capturardddddd.PNG" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hy{
+            text-decoration: none;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1;
+            position: fixed;
+        }
+
+        body{
+            font-size: 16px;
+            margin: 0px;
+            padding: 0px;
+            /* display: flex;
+                flex-direction: column; */
+        }
+        
+        /* #produtos,
+            #carrinho{
+                max-width:900px;
+                margin:0;
+                padding:0;
+                display: flex
+            }  */
+
+        /* .produto-single{
+                width: 400px;
+                border: 1px solid black;
+                border-radius: 15px;
+                margin: 20px;
+                padding: 10px;
+                box-shadow: 2px 2px rgb(124, 121, 121);
+            }    */
+
+        h1 {
+            color: rgb(0, 0, 0);
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+
+        }
+
+        a:hover {
+            color:black;
+        }
+
+        p {
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        header {
+            background-color: rgb(0, 0, 0);
+            height: 70px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header p {
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .tooltip::after{
+            content: attr(data-tooltip) !important;
+            position: absolute;
+            top: -50px;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            border-radius: 8px;
+            background-color: rgb(255, 255, 255);
+            color:  rgb(0, 0, 0);
+            font-size: 30px;
+            padding: 5px;
+            min-width: max-content;
+            max-width: fit-content;
+            text-align: center;
+            display: none;
+            z-index: 40;
+        }
+        h5{
+            background-color: rgb(0, 0, 0);
+           font-size: 50px;
+           color: rgb(255, 255, 255);
+           height: 80px;
+           display: flex;
+           justify-content: center;
+           flex-direction: row;
+           align-items: center;
+           justify-content: center;
+           font-style: oblique;
+        }
+        body{
+            background-color: rgba(214, 200, 200, 0.651);
+        }
+    </style>
+</head>
+<body>
+</button>
+    <a class="hy" href="https://api.whatsapp.com/send?phone=5564996465863&text=Ol%C3%A1%20Tenho%20Interesse%20nesses%20produtos:" target="_blank" id="link-wpp">
+        <img src="whatss.png" alt="whatsapp" width="70px" height="70px">
+    </a>
+    </a>
+        <header>
+        <p>Casa Das Utilidades</p>
+    </header>
+    <main class="mt-10 ml-10 mr-10">
+        <div id="produtos" class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10"></div>
+        <div id="carrinho"></div>
+        <h5>desenvolvido por @d1menor.064</h5>
+    </main>
+    <script>
+       const items = [
+            {
+                id: 0,
+                nome: 'MINI CAIXA DE SOM!!!',
+                img: 'Capturar.PNG',
+                quantidade: 0
+            },
+            {
+                id: 1,
+                nome: 'LAMPADA COM LED DE SOM',
+                img: 'Capturarddd.PNG',
+                quantidade: 0
+            },
+            {
+                id: 2,
+                nome: 'FONE GAMER',
+                img: 'Capturare.PNG',
+                quantidade: 0
+            },
+            {
+                id: 3,
+                nome: 'GARRAFA TERMICA (stanley)',
+                img: 'ddd.PNG',
+                quantidade: 0
+            },
+            {
+                id: 4,
+                nome: 'BLUETHOOTH SPEAKER',
+                img: 'sa.PNG',
+                quantidade: 0
+            },
+            {
+                id: 5,
+                nome: 'FONES BLOETOOTH',
+                img: 'Capturardds.PNG',
+                quantidade: 0
+            },
+            {
+                id: 6,
+                nome: 'CARREGADOR DE IPHONE',
+                img: 'Capturarss.PNG',
+                quantidade: 0
+            },
+            {
+                id: 7,
+                nome: 'CARREGADOR TIPO (C)',
+                img: 'CapturarDDW.PNG',
+                quantidade: 0
+            },
+            {
+                id: 8,
+                nome: 'CAARREGADOR TIPO (V8)',
+                img: 'CapturarWA.PNG',
+                quantidade: 0
+            },
+            {
+                id: 9,
+                nome: 'CABO TIPO (C)',
+                img: 'SSE.PNG',
+                quantidade: 0
+            },
+            {
+                id: 10,
+                nome: 'CABO TIPO (V8)',
+                img: 'sds.PNG',
+                quantidade: 0
+            },
+            {
+                id: 11,
+                nome: 'CABO TIPO (IPHONE)',
+                img: 'ddss.PNG',
+                quantidade: 0
+            },
+            {
+                id: 11,
+                nome: 'CARREGADOR (PORTATIL)',
+                img: 'dwd.PNG',
+                quantidade: 0
+            },
+        ]
+        
+        inicializarloja = () => {
+            var containerProdutos = document.getElementById('produtos');
+            items.map((val) => {
+                containerProdutos.innerHTML += `
+                    <div class="w-full rounded overflow-hidden shadow-lg h-fit"> 
+                        <img class="w-full h-[20rem] object-cover object-center" src="`+ val.img + `" alt="Sunset in the mountains">
+                        <div class="px-6 py-4 tooltip" data-tooltip="`+ val.nome + `">
+                            <div class="font-bold text-xl mb-2 whitespace-nowrap text-ellipsis overflow-hidden relative" data-bs-toggle="tooltip">`+ val.nome + `</div>
+                        </div>
+                        <div class="px-6 pt-4 pb-2"> 
+                            <button class="bg-black hover:bg-red-900 text-white font-bold py-2 px-4 rounded-full" onclick="addWpp(this)" data-title="`+ val.nome + `">Adicionar ao Carrinho!</button>
+                        </div>
+                    </div>
+                `;
+            })
+        }
+
+        inicializarloja();
+        window.alert("Sejam Bem-Vindos!!  assim que clicar em ok o site sera liberaddo ;)")
+             
+        function addWpp(el){
+            let wppHref = document.getElementById('link-wpp');
+            console.log(wppHref.getAttribute('href'));
+            let url = new URL(wppHref.getAttribute('href'));
+            let produto = el.getAttribute('data-title');
+            url.searchParams.set('text', (url.searchParams.get('text') ?? '')+' - '+produto);
+            wppHref.setAttribute('href', url.href);
+        }
+        
+    </script>
+</body>
+</html>
